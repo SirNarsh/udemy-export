@@ -6,6 +6,7 @@ include "./vendor/autoload.php";
 include "./psr4-autoload.php";
 
 $token = $argv[1];
+$fileName = isset($argv[2]) ? $argv[2] : 'courses-list_' . time() . '.xlsx';
 
 
 echo "Read token: '{$token}'" . PHP_EOL;
@@ -21,15 +22,21 @@ echo "Step 1: Get all courses" . PHP_EOL;
 $udemyService = new \App\Services\UdemyService($token);
 $udemyResponseDto = $udemyService->getAllCourses();
 
+if ($udemyResponseDto->lastResponseFailed) {
+    echo "===================" . PHP_EOL;
+    echo "Failed, check errors above!" . PHP_EOL;
+    exit(1);
+}
+
 echo "Step 2: Prepare to excel file" . PHP_EOL;
 $excel = new \App\Services\ExcelService();
 foreach($udemyResponseDto->coursesDto as $course) {
     $excel->addCourse($course);
 }
 
-$fileName = __DIR__ . '/output/output_' . time() . '.xlsx';
-echo "Step 3: Write excel file: {$fileName}" . PHP_EOL;
-$excel->save($fileName);
+$fullPath = '/out/' . $fileName;
+echo "Step 3: Write excel file: {$fullPath}" . PHP_EOL;
+$excel->save($fullPath);
 
 echo "===================" . PHP_EOL;
 echo "FINISHED, Study well!" . PHP_EOL;

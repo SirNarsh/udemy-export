@@ -21,6 +21,6 @@ WORKDIR /udemy-export
 
 RUN composer install --no-plugins --no-scripts --no-interaction --no-ansi --no-dev
 
-VOLUME "/udemy-export/output"
+VOLUME "/out"
 
 ENTRYPOINT ["php", "main.php"]

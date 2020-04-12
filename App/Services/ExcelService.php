@@ -43,7 +43,7 @@ class ExcelService
         $this->sheet->setCellValue('F1', 'Enrollment time');
         $this->sheet->setCellValue('G1', 'Number of collections');
         foreach (['A', 'B', 'C', 'D', 'E', 'F', 'G'] as $column) {
-            $this->sheet->getActiveSheet()->getColumnDimension($column)->setAutoSize(true);
+            $this->sheet->getColumnDimension($column)->setAutoSize(true);
         }
     }
 
