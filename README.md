@@ -3,6 +3,7 @@ A tool to export list of all courses in your udemy (student) account
 
 
 # Usage
+Simple 2 steps to get an EXCEL file with list of courses you have subscribed to in your account, including progress, number of collections course is in, last accessed & date purchased.
 
 ## Step 1: Get Udemy token
 
