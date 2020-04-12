@@ -14,9 +14,11 @@ A tool to export list of all courses in your udemy (student) account
 ## Step 2: Run export With docker (Recommended)
 
 - Assuming you have docker installed
+
 Run `docker run --rm -v ${PWD}/out sirnarsh/udemy-export TOKEN_HERE`
 replacing TOKEN_HERE with token in step 1
 Example `docker run --rm -v ${PWD}/out sirnarsh/udemy-export abcdefgh123123123123`
+
 (Notice: $PWD will automatically be replaced with current directory which will be mounted to /out directory in image)
 
 
