@@ -33,14 +33,18 @@ class ExcelService
     public function __construct()
     {
         $this->spreadsheet = new \PhpOffice\PhpSpreadsheet\Spreadsheet();
+
         $this->sheet = $this->spreadsheet->getActiveSheet();
-        $this->sheet->setCellValue('A1', 'ID');
+        $this->sheet->setCellValue('A1', 'Id');
         $this->sheet->setCellValue('B1', 'Title');
         $this->sheet->setCellValue('C1', 'Url');
         $this->sheet->setCellValue('D1', 'Completion ratio');
         $this->sheet->setCellValue('E1', 'Last accessed time');
         $this->sheet->setCellValue('F1', 'Enrollment time');
         $this->sheet->setCellValue('G1', 'Number of collections');
+        foreach (['A', 'B', 'C', 'D', 'E', 'F', 'G'] as $column) {
+            $this->sheet->getActiveSheet()->getColumnDimension($column)->setAutoSize(true);
+        }
     }
 
     /**
