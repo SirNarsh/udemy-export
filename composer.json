@@ -1,0 +1,18 @@
+{
+    "name": "sirnarsh/udemy-export",
+    "description": "Command line tool to export list of your udemy courses & progress to excel",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nawwar Elnarsh",
+            "email": "sirnarsh@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7",
+        "phpoffice/phpspreadsheet": "^1.11",
+        "ext-curl": "*",
+        "ext-json": "*"
+    }
+}
