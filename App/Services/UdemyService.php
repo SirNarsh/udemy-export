@@ -25,6 +25,7 @@ class UdemyService {
     }
 
     /**
+     * Loop of udemy requests to get all courses (setting the response dto, then appending courses each request)
      * @return UdemyResponseDto
      */
     public function getAllCourses() : UdemyResponseDto
@@ -44,6 +45,7 @@ class UdemyService {
     }
 
     /**
+     * Send request identical to udemy frontend request
      * @return bool|string
      */
     public function getNext() {
