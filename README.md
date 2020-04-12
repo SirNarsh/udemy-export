@@ -12,14 +12,15 @@ Simple 2 steps to get an EXCEL file with list of courses you have subscribed to 
 1. Login to udemy, and open 'network' inspection tool
 2. Read request headers from udemy until you find 'x-udemy-authorization: Bearer abcdefgh123123123123'
 3. Copy the token bearer for example in above it's "abcdefgh123123123123"
+(You can also find this as 'access_token' in your cookies tab)
 
 ## Step 2: Run export With docker (Recommended)
 
 - Assuming you have docker installed
 
-Run `docker run --rm -v ${PWD}/out sirnarsh/udemy-export TOKEN_HERE`
+Run `docker run --rm -v ${PWD}:/out sirnarsh/udemy-export TOKEN_HERE`
 replacing TOKEN_HERE with token in step 1
-Example `docker run --rm -v ${PWD}/out sirnarsh/udemy-export abcdefgh123123123123`
+Example `docker run --rm -v ${PWD}:/out sirnarsh/udemy-export abcdefgh123123123123`
 
 (Notice: $PWD will automatically be replaced with current directory which will be mounted to /out directory in image)
 
