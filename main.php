@@ -28,7 +28,7 @@ if ($udemyResponseDto->lastResponseFailed) {
     exit(1);
 }
 
-echo "Step 2: Prepare to excel file" . PHP_EOL;
+echo "Step 2: Prepare excel file" . PHP_EOL;
 $excel = new \App\Services\ExcelService();
 foreach($udemyResponseDto->coursesDto as $course) {
     $excel->addCourse($course);
