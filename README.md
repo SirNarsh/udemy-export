@@ -35,6 +35,6 @@ To cleanup the image downloaded you can always run `docker image rm sirnarsh/ude
 
 # License
 
-This script is open-sourced software licensed under the [MIT license](LICENSE.md).
+This script is open-sourced software licensed under the [MIT license](LICENSE).
 This tool is in no way sponsored, endorsed or administered by, or associated with, Udemy.
 Udemy is registered trademark by Udemy, Inc.
