@@ -22,7 +22,7 @@ foreach($udemyResponseDto->coursesDto as $course) {
 
 $fileName = __DIR__ . 'output/output_' . time() . '.xlsx';
 echo "Step 3: Write excel file: {$fileName}";
-$excel->save(__DIR__ . 'output/output_' . time() . '.xlsx');
+$excel->save(__DIR__ . '/output/output_' . time() . '.xlsx');
 
 echo "===================" .PHP_EOL;
 echo "FINISHED, Study well!";
